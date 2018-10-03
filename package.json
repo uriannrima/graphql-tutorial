@@ -1,0 +1,66 @@
+{
+  "name": "electrical-system",
+  "description": "GraphQL server created to learn GraphQL with Apollo and Feathers.",
+  "version": "0.0.0",
+  "homepage": "",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Luciano Lima",
+    "email": "luciano.lima@ingresso.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "engines": {
+    "node": "^9.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "yarn run eslint && yarn run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "dev": "nodemon src/ --exec babel-node --presets @babel/preset-env",
+    "start": "babel-node src/",
+    "mocha": "mocha test/ --recursive --exit"
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^2.1.11",
+    "@feathersjs/authentication-jwt": "^2.0.5",
+    "@feathersjs/authentication-local": "^1.2.5",
+    "@feathersjs/configuration": "^2.0.4",
+    "@feathersjs/errors": "^3.3.4",
+    "@feathersjs/express": "^1.2.7",
+    "@feathersjs/feathers": "^3.2.3",
+    "@feathersjs/socketio": "^3.2.6",
+    "compression": "^1.7.3",
+    "cors": "^2.8.4",
+    "feathers-hooks-common": "^4.17.10",
+    "feathers-nedb": "^3.1.0",
+    "graphql": "^14.0.2",
+    "graphql-server-express": "^1.4.0",
+    "graphql-tools": "^4.0.0",
+    "helmet": "^3.13.0",
+    "jsonwebtoken": "^8.3.0",
+    "nedb": "^1.8.0",
+    "serve-favicon": "^2.5.0",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.2",
+    "@babel/core": "^7.1.2",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@playlyfe/gql": "^2.6.0",
+    "eslint": "^5.6.1",
+    "feathers-seeder": "^2.0.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.2"
+  }
+}
