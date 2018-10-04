@@ -16,6 +16,7 @@ module.exports = {
       },
       callback(user, seed) {
         console.info(`User created: ${user._id}!`);
+        seedBuildings(user, seed);
       }
     }
   ]
