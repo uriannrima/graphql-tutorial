@@ -10,7 +10,7 @@ type User {
   createdAt: String
   firstName: String
   lastName: String
-  username: String!
+  email: String!
   buildings: [Building] # User has many Buildings
 }
 
@@ -98,14 +98,14 @@ type RootQuery {
 # this schema allows the following mutations:
 type RootMutation {
   signUp (
-    username: String!
+    email: String!
     password: String!
     firstName: String
     lastName: String
   ): User
 
   logIn (
-    username: String!
+    email: String!
     password: String!
   ): AuthPayload
 

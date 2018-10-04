@@ -1,4 +1,4 @@
-const { authenticate } = require('@feathersjs/authentication').hooks;
+// const { authenticate } = require('@feathersjs/authentication').hooks;
 
 const {
   hashPassword, protect
@@ -7,12 +7,12 @@ const {
 module.exports = {
   before: {
     all: [],
-    find: [authenticate('jwt')],
-    get: [authenticate('jwt')],
+    find: [/* authenticate('jwt')*/],
+    get: [/* authenticate('jwt')*/],
     create: [hashPassword()],
-    update: [hashPassword(), authenticate('jwt')],
-    patch: [hashPassword(), authenticate('jwt')],
-    remove: [authenticate('jwt')]
+    update: [hashPassword(), /* authenticate('jwt')*/],
+    patch: [hashPassword(), /* authenticate('jwt')*/],
+    remove: [/* authenticate('jwt')*/]
   },
 
   after: {

@@ -1,7 +1,7 @@
-// Initializes the `building` service on path `/building`
+// Initializes the `load` service on path `/load`
 const createService = require('feathers-nedb');
-const createModel = require('../../models/building.model');
-const hooks = require('./building.hooks');
+const createModel = require('../../models/load.model');
+const hooks = require('./loads.hooks');
 
 module.exports = function (app) {
   const Model = createModel(app);
@@ -13,10 +13,10 @@ module.exports = function (app) {
   };
 
   // Initialize our service with any options it requires
-  app.use('/building', createService(options));
+  app.use('/loads', createService(options));
 
   // Get our initialized service so that we can register hooks
-  const service = app.service('building');
+  const service = app.service('loads');
 
   service.hooks(hooks);
 };
