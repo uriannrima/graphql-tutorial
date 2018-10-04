@@ -10,7 +10,7 @@ module.exports = {
       path: 'users',
       count: 1,
       template: {
-        'email': '{{internet.email}}',
+        'email': 'internet.email@gmail.com',
         'firstName': '{{name.firstName}}',
         'lastName': '{{name.lastName}}',
         'password': 'password',

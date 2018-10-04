@@ -96,10 +96,10 @@ export default function Resolvers() {
     },
     RootQuery: {
       viewer(root, args, context) {
-        return Viewer.find(context);
+        return Viewer.find(context).then(result => result.data);
       },
       buildings(root, args, context) {
-        return Buildings.find(context);
+        return Buildings.find(context).then(result => result.data);
       }
     },
     RootMutation: {
