@@ -13,17 +13,23 @@ module.exports = {
     get: [
       // authenticate('jwt')
     ],
-    create: [hashPassword()],
-    update: [hashPassword(), authenticate('jwt')],
-    patch: [hashPassword(), authenticate('jwt')],
-    remove: [authenticate('jwt')]
+    create: [
+      // hashPassword()
+    ],
+    update: [
+      // hashPassword(), authenticate('jwt')
+    ],
+    patch: [
+      // hashPassword(), authenticate('jwt')
+    ],
+    remove: []
   },
 
   after: {
     all: [
       // Make sure the password field is never sent to the client
       // Always must be the last hook
-      protect('password')
+      // protect('password')
     ],
     find: [],
     get: [],

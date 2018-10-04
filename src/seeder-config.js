@@ -7,7 +7,7 @@ module.exports = {
   services: [
     {
       path: 'users',
-      count: 2,
+      count: 1,
       template: {
         'username': '{{internet.email}}',
         'firstName': '{{name.firstName}}',
@@ -16,7 +16,6 @@ module.exports = {
       },
       callback(user, seed) {
         console.info(`User created: ${user._id}!`);
-        return seedBuildings(user, seed);
       }
     }
   ]

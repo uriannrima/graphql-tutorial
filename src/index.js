@@ -3,11 +3,28 @@ const logger = require('./logger');
 const app = require('./app');
 
 /* Development Seeder */
+import memory from 'feathers-memory';
 const seeder = require('feathers-seeder');
-const seederOptions = require('./seeder-config');
+// const seederOptions = require('./seeder-config');
 
-// Configure the seeder.
-app.configure(seeder(seederOptions));
+const seederOptions = {
+  services: [
+    {
+      path: 'users',
+      count: 10,
+      template: {
+        'username': '{{internet.email}}',
+        'firstName': '{{name.firstName}}',
+        'lastName': '{{name.lastName}}',
+        'password': 'password'
+      }
+    }
+  ]
+};
+
+app
+  .use('/users', memory())
+  .configure(seeder(seederOptions));
 
 // Seed then start.
 app.seed().then(() => {
