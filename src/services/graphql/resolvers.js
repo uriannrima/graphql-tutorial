@@ -39,7 +39,7 @@ export default function Resolvers() {
           query: {
             buildingId: building._id
           }
-        });
+        }).then(result => result.data);
       }
     },
     Panel: {
@@ -48,14 +48,14 @@ export default function Resolvers() {
           query: {
             panelId: panel._id
           }
-        });
+        }).then(result => result.data);
       },
       image(panel) {
         return Images.find({
           query: {
             panelId: panel._id
           }
-        });
+        }).then(result => result.data);
       }
     },
     Room: {
@@ -64,7 +64,7 @@ export default function Resolvers() {
           query: {
             roomId: room._id
           }
-        });
+        }).then(result => result.data);
       }
     },
     Image: {
@@ -75,7 +75,7 @@ export default function Resolvers() {
           query: {
             breakerId: breaker._id
           }
-        });
+        }).then(result => result.data);
       }
     },
     Load: {
@@ -84,7 +84,7 @@ export default function Resolvers() {
           query: {
             loadId: load._id
           }
-        });
+        }).then(result => result.data);
       }
     },
     Toggle: {
@@ -100,6 +100,15 @@ export default function Resolvers() {
       },
       buildings(root, args, context) {
         return Buildings.find(context).then(result => result.data);
+      },
+      building(root, { _id }, context) {
+        return Buildings.get(_id, context);
+      },
+      rooms(root, args, context) {
+        return Rooms.find(context).then(result => result.data);
+      },
+      room(root, { _id }, context) {
+        return Rooms.get(_id, context);
       }
     },
     RootMutation: {
